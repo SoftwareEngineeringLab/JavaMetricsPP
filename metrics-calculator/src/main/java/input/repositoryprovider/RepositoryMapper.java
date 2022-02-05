@@ -10,6 +10,7 @@ import input.CSVInputRow;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -53,12 +54,12 @@ public class RepositoryMapper {
     }
 
     private static String getUserName(String repositoryAbsolutePath) {
-        String[] repositoryPathElements = repositoryAbsolutePath.split("\\\\");
+        String[] repositoryPathElements = repositoryAbsolutePath.split(File.separator);
         return repositoryPathElements[repositoryPathElements.length - 2];
     }
 
     private static String getProjectName(String repositoryAbsolutePath) {
-        String[] repositoryPathElements = repositoryAbsolutePath.split("\\\\");
+        String[] repositoryPathElements = repositoryAbsolutePath.split(File.separator);
         return repositoryPathElements[repositoryPathElements.length - 1];
     }
 

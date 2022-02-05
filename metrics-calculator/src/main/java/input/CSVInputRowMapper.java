@@ -49,7 +49,7 @@ public class CSVInputRowMapper {
 
     private static String getRepositoryAbsolutePath(String repositoryAddressURI) {
         String repositoryAbsolutePath = Constants.REPOSITORIES_DIRECTORY + File.separator + getRepositoryName(repositoryAddressURI);
-        return repositoryAbsolutePath.replace("/", "\\");
+        return repositoryAbsolutePath.replace("/", File.separator);
     }
 
     private static String getRepositoryName(String repositoryAddressURI) {
