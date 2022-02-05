@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RepositoryMapper {
@@ -54,12 +55,14 @@ public class RepositoryMapper {
     }
 
     private static String getUserName(String repositoryAbsolutePath) {
-        String[] repositoryPathElements = repositoryAbsolutePath.split(File.separator);
+        String pattern = Pattern.quote(System.getProperty("file.separator"));
+        String[] repositoryPathElements = repositoryAbsolutePath.split(pattern);
         return repositoryPathElements[repositoryPathElements.length - 2];
     }
 
     private static String getProjectName(String repositoryAbsolutePath) {
-        String[] repositoryPathElements = repositoryAbsolutePath.split(File.separator);
+        String pattern = Pattern.quote(System.getProperty("file.separator"));
+        String[] repositoryPathElements = repositoryAbsolutePath.split(pattern);
         return repositoryPathElements[repositoryPathElements.length - 1];
     }
 
