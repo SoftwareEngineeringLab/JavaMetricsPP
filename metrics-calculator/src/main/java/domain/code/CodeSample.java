@@ -4,11 +4,7 @@ import com.github.javaparser.ast.Node;
 import domain.git.Commit;
 import domain.git.Repository;
 import exception.RangeNotFoundException;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;

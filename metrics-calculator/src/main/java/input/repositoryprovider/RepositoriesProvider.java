@@ -23,6 +23,7 @@ public class RepositoriesProvider {
             Repository repository = RepositoryMapper.from(row);
             repositories.add(repository);
             doneElements++;
+            System.out.println(repository);
             System.out.println("Done repositories : " + doneElements + "/" + allElements);
         }
         return repositories;

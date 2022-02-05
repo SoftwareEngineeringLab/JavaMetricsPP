@@ -32,6 +32,7 @@ public class MetricsCalculatorService {
         int doneElements = 0;
         int allElements = codeSamples.size();
 
+        System.out.println("Number of code samples: " + codeSamples.size());
         for (CodeSample codeSample : codeSamples) {
             System.out.println("Sample id: " + codeSample.getId());
             codeSample.calculateProductMetrics();

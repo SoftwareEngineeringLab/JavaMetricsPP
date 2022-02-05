@@ -8,11 +8,7 @@ import com.github.javaparser.utils.Pair;
 import domain.code.MetricName;
 import metricscalculator.productmetric.ProductMetricClass;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Class for computing LCOM metric.

@@ -1,12 +1,7 @@
 package metricscalculator.productmetric.visitors;
 
 import com.github.javaparser.ast.expr.ConditionalExpr;
-import com.github.javaparser.ast.stmt.CatchClause;
-import com.github.javaparser.ast.stmt.ForEachStmt;
-import com.github.javaparser.ast.stmt.ForStmt;
-import com.github.javaparser.ast.stmt.IfStmt;
-import com.github.javaparser.ast.stmt.SwitchEntry;
-import com.github.javaparser.ast.stmt.WhileStmt;
+import com.github.javaparser.ast.stmt.*;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 public class CycloVisitor extends VoidVisitorAdapter<Void> {
