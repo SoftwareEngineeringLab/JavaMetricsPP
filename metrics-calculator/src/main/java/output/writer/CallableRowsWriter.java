@@ -47,7 +47,7 @@ public class CallableRowsWriter {
                     codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_ADDED_LINES),
                     codeSample.getMetricValueAsString(MetricName.MAX_NUMBER_OF_ADDED_LINES),
                     codeSample.getMetricValueAsString(MetricName.AGE_IN_DAYS),
-                    codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_BETWEEN_CHANGES),
+                    codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_DAYS_BETWEEN_CHANGES),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_BUG_FIXES),
                     codeSample.getMetricValueAsString(MetricName.CODE_CHURN),
                     codeSample.getMetricValueAsString(MetricName.MEAN_COMMIT_MESSAGE_LENGTH),

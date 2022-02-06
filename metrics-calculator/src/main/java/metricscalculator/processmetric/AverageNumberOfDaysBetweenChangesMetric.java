@@ -32,7 +32,7 @@ public class AverageNumberOfDaysBetweenChangesMetric implements ProcessMetric {
 
     @Override
     public MetricName getName() {
-        return MetricName.AVERAGE_NUMBER_OF_BETWEEN_CHANGES;
+        return MetricName.AVERAGE_NUMBER_OF_DAYS_BETWEEN_CHANGES;
     }
 
 }

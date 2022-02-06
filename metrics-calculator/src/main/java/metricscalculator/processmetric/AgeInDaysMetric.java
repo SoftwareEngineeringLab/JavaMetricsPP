@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 /**
- * Name: AgeInDaysMetric
+ * Name: Age In Days
  * Description: The age of source element in days.
  * Reference: Péter Gyimesi. 2017. Automatic calculation of process metrics and their bug
  * prediction capabilities. Acta Cybernetica, 23(2), 537-559
