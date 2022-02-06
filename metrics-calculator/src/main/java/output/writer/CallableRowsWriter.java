@@ -52,7 +52,6 @@ public class CallableRowsWriter {
                     codeSample.getMetricValueAsString(MetricName.CODE_CHURN),
                     codeSample.getMetricValueAsString(MetricName.MEAN_COMMIT_MESSAGE_LENGTH),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_REVISIONS),
-                    codeSample.getMetricValueAsString(MetricName.NUMBER_OF_DISTINCT_COMMITTERS),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_COMMITS_WITHOUT_MESSAGE),
                     codeSample.getMetricValueAsString(MetricName.DAYS_WITH_COMMITS),
                     codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_DELETED_LINES),

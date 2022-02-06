@@ -6,7 +6,7 @@ import domain.code.CodeSampleType;
 import domain.code.MetricName;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import output.header.CallableHeader;
+import output.header.ClassHeader;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class ClassRowsWriter {
 
     private static CSVPrinter getPrinter(FileWriter out) throws IOException {
         return CSVFormat.DEFAULT
-                .withHeader(CallableHeader.class)
+                .withHeader(ClassHeader.class)
                 .print(out);
     }
 
@@ -52,7 +52,6 @@ public class ClassRowsWriter {
                     codeSample.getMetricValueAsString(MetricName.CODE_CHURN),
                     codeSample.getMetricValueAsString(MetricName.MEAN_COMMIT_MESSAGE_LENGTH),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_REVISIONS),
-                    codeSample.getMetricValueAsString(MetricName.NUMBER_OF_DISTINCT_COMMITTERS),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_COMMITS_WITHOUT_MESSAGE),
                     codeSample.getMetricValueAsString(MetricName.DAYS_WITH_COMMITS),
                     codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_DELETED_LINES),
