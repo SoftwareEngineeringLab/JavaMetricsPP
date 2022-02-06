@@ -2,11 +2,11 @@
 
 # download files
 
-wget -O csv-conform-1.0-SNAPSHOT-jar-with-dependencies.jar https://raw.githubusercontent.com/SoftwareEngineeringLab/JavaMetricsPP/25f24aceca1985fc78fccbc231aec8b16170560d/MLCQ-dataset/test/csv-conform-1.0-SNAPSHOT-jar-with-dependencies.jar;
+wget -O csv-conform-1.0-SNAPSHOT-jar-with-dependencies.jar https://raw.githubusercontent.com/SoftwareEngineeringLab/JavaMetricsPP/71b5834024c54937236207de2510bb993579521f/MLCQ-dataset/test/csv-conform-1.0-SNAPSHOT-jar-with-dependencies.jar;
 
-wget -O metrics-calculator-1.0-SNAPSHOT-jar-with-dependencies.jar https://raw.githubusercontent.com/SoftwareEngineeringLab/JavaMetricsPP/25f24aceca1985fc78fccbc231aec8b16170560d/MLCQ-dataset/test/metrics-calculator-1.0-SNAPSHOT-jar-with-dependencies.jar;
+wget -O metrics-calculator-1.0-SNAPSHOT-jar-with-dependencies.jar https://raw.githubusercontent.com/SoftwareEngineeringLab/JavaMetricsPP/71b5834024c54937236207de2510bb993579521f/MLCQ-dataset/test/metrics-calculator-1.0-SNAPSHOT-jar-with-dependencies.jar;
 
-wget -O MLCQ_small.csv https://raw.githubusercontent.com/SoftwareEngineeringLab/JavaMetricsPP/25f24aceca1985fc78fccbc231aec8b16170560d/MLCQ-dataset/test/MLCQ_small.csv;
+wget -O MLCQ_small.csv https://raw.githubusercontent.com/SoftwareEngineeringLab/JavaMetricsPP/71b5834024c54937236207de2510bb993579521f/MLCQ-dataset/test/MLCQ_small.csv;
 
 # clone repositories
 {
