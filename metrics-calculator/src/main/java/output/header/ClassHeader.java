@@ -7,8 +7,8 @@ public enum ClassHeader {
 
     AverageNumberOfAddedLines,
     MaxNumberOfAddedLines,
-    Age,
-    AverageTimeBetweenChanges,
+    AgeInDays,
+    AverageNumberOfDaysBetweenChanges,
     NumberOfBugFixes,
     CodeChurn,
     MeanCommitMessageLength,
@@ -23,7 +23,7 @@ public enum ClassHeader {
     MaxNumberOfModifiedLines,
     NumberOfRefactorings,
     AuthorFragmentation,
-    TimePassedSinceTheLastChange,
+    DaysPassedSinceTheLastChange,
 
     LambdaDensity,
     LinesOfCode,

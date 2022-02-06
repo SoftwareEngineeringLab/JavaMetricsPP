@@ -14,8 +14,8 @@ public class ProcessMetricsCalculator {
     private static final List<ProcessMetric> PROCESS_METRICS = List.of(
             new AverageNumberOfAddedLinesMetric(),
             new MaxNumberOfAddedLinesMetric(),
-            new AgeMetric(),
-            new AverageTimeBetweenChangesMetric(),
+            new AgeInDaysMetric(),
+            new AverageNumberOfDaysBetweenChangesMetric(),
             new NumberOfBugFixesMetric(),
             new CodeChurnMetric(),
             new MeanCommitMessageLengthMetric(),
@@ -30,7 +30,7 @@ public class ProcessMetricsCalculator {
             new MaxNumberOfModifiedLinesMetric(),
             new NumberOfRefactoringsMetric(),
             new AuthorFragmentationMetric(),
-            new TimePassedSinceTheLastChangeMetric()
+            new DaysPassedSinceTheLastChangeMetric()
     );
 
     public static List<Metric> calculateAllMetrics(CodeSample codeSample) {

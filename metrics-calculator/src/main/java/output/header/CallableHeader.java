@@ -7,8 +7,8 @@ public enum CallableHeader {
 
     AverageNumberOfAddedLines,
     MaxNumberOfAddedLines,
-    Age,
-    AverageTimeBetweenChanges,
+    AgeInDays,
+    AverageNumberOfDaysBetweenChanges,
     NumberOfBugFixes,
     CodeChurn,
     MeanCommitMessageLength,
@@ -23,7 +23,7 @@ public enum CallableHeader {
     MaxNumberOfModifiedLines,
     NumberOfRefactorings,
     AuthorFragmentation,
-    TimePassedSinceTheLastChange,
+    DaysPassedSinceTheLastChange,
 
     McCabeCyclomaticComplexity,
     LinesOfCode,

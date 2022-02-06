@@ -9,13 +9,13 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 /**
- * Name: Average Time Between Changes
+ * Name: Average Number Of Days Between Changes
  * Description: The average number of days that passed between consecutive
  * modifications of the source element.
  * Reference: Péter Gyimesi. 2017. Automatic calculation of process metrics and their bug
  * prediction capabilities. Acta Cybernetica, 23(2), 537-559
  */
-public class AverageTimeBetweenChangesMetric implements ProcessMetric {
+public class AverageNumberOfDaysBetweenChangesMetric implements ProcessMetric {
 
     @Override
     public Number getValue(CodeSample codeSample) {
@@ -32,7 +32,7 @@ public class AverageTimeBetweenChangesMetric implements ProcessMetric {
 
     @Override
     public MetricName getName() {
-        return MetricName.AVERAGE_TIME_BETWEEN_CHANGES;
+        return MetricName.AVERAGE_NUMBER_OF_BETWEEN_CHANGES;
     }
 
 }

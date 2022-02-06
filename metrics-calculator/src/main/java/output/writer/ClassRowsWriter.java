@@ -46,8 +46,8 @@ public class ClassRowsWriter {
 
                     codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_ADDED_LINES),
                     codeSample.getMetricValueAsString(MetricName.MAX_NUMBER_OF_ADDED_LINES),
-                    codeSample.getMetricValueAsString(MetricName.AGE),
-                    codeSample.getMetricValueAsString(MetricName.AVERAGE_TIME_BETWEEN_CHANGES),
+                    codeSample.getMetricValueAsString(MetricName.AGE_IN_DAYS),
+                    codeSample.getMetricValueAsString(MetricName.AVERAGE_NUMBER_OF_BETWEEN_CHANGES),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_BUG_FIXES),
                     codeSample.getMetricValueAsString(MetricName.CODE_CHURN),
                     codeSample.getMetricValueAsString(MetricName.MEAN_COMMIT_MESSAGE_LENGTH),
@@ -62,7 +62,7 @@ public class ClassRowsWriter {
                     codeSample.getMetricValueAsString(MetricName.MAX_NUMBER_OF_MODIFIED_LINES),
                     codeSample.getMetricValueAsString(MetricName.NUMBER_OF_REFACTORINGS),
                     codeSample.getMetricValueAsString(MetricName.AUTHOR_FRAGMENTATION),
-                    codeSample.getMetricValueAsString(MetricName.TIME_PASSED_SINCE_THE_LAST_CHANGE),
+                    codeSample.getMetricValueAsString(MetricName.DAYS_PASSED_SINCE_THE_LAST_CHANGE),
 
                     codeSample.getMetricValueAsString(MetricName.LAMBDA_DENSITY),
                     codeSample.getMetricValueAsString(MetricName.LINES_OF_CODE),

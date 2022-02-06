@@ -10,7 +10,6 @@ import input.CSVInputRow;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.regex.Pattern;
