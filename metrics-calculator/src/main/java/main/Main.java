@@ -21,8 +21,8 @@ public class Main {
             Constants.CSV_INPUT_FILE_PATH = line.getOptionValue(CSV_OPTION);
             Constants.REPOSITORIES_DIRECTORY = line.getOptionValue(GIT_SOURCES_OUTPUT_DIRECTORY_OPTION);
             Constants.WORK_DIRECTORY = Constants.REPOSITORIES_DIRECTORY + File.separator + "work_dir";
-            Constants.CALLABLES_OUTPUT_FILE_PATH = Constants.WORK_DIRECTORY + File.separator + "callables_metrics.xlsx";
-            Constants.CLASSES_OUTPUT_FILE_PATH = Constants.WORK_DIRECTORY + File.separator + "class_metrics.xlsx";
+            Constants.CALLABLES_OUTPUT_FILE_PATH = Constants.WORK_DIRECTORY + File.separator + "callables_metrics.csv";
+            Constants.CLASSES_OUTPUT_FILE_PATH = Constants.WORK_DIRECTORY + File.separator + "class_metrics.csv";
             MetricsCalculatorService.calculateMetrics();
         } catch (ParseException e) {
             e.printStackTrace();
