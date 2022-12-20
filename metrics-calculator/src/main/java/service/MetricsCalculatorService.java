@@ -34,11 +34,15 @@ public class MetricsCalculatorService {
 
         System.out.println("Number of code samples: " + codeSamples.size());
         for (CodeSample codeSample : codeSamples) {
-            System.out.println("Sample id: " + codeSample.getId());
-            codeSample.calculateProductMetrics();
-            codeSample.calculateProcessMetrics();
             doneElements++;
-            System.out.println("Done code sample : " + doneElements + "/" + allElements);
+            try {
+                System.out.println("Sample id: " + codeSample.getId());
+                codeSample.calculateProductMetrics();
+                codeSample.calculateProcessMetrics();
+                System.out.println("Done code sample : " + doneElements + "/" + allElements);
+            } catch(Exception ex) {
+                System.err.println("Failed code sample : " + doneElements + "/" + allElements + ": " + ex);
+            }
         }
 
         List<CodeSample> processedCodeSamples = codeSamples.stream()

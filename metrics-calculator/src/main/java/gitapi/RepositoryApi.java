@@ -28,6 +28,8 @@ public class RepositoryApi {
         if (DirectoryUtils.directoryExists(repositoryAbsolutePath)) {
             return getRepositoryStatusFromGit(addressURI, repositoryAbsolutePath, hash);
         }
+
+        System.err.println("MISSING REPOSITORY: " + addressURI + " at " + repositoryAbsolutePath + ". Clone with git clone " + addressURI + " && git checkout " + hash);
         return getUnavailableRepositoryStatus("Given repository path does not exist: " + repositoryAbsolutePath);
     }
 
@@ -43,10 +45,16 @@ public class RepositoryApi {
 
     private static RepositoryStatus getRepositoryStatusByLsRemote(String addressURI,
                                                                   String repositoryAbsolutePath) {
-        List<String> command = List.of("git", "ls-remote", addressURI, "HEAD");
+        List<String> getRemoteCommand = List.of("git", "remote", "get-url", "origin");
+        List<String> remoteLogs = ProcessExecutor.executeCommandAndReturnProcessLogs(repositoryAbsolutePath, getRemoteCommand);
+        if(!remoteLogs.get(0).trim().equals(addressURI.trim())) {
+            System.err.println("Repository " + repositoryAbsolutePath + " cloned from [" + remoteLogs.get(0) + "] instead of [" + addressURI + "]. Continuing with the real remote");
+        }
+
+        List<String> command = List.of("git", "ls-remote", remoteLogs.get(0).trim(), "HEAD");
         List<String> processLogs = ProcessExecutor.executeCommandAndReturnProcessLogs(repositoryAbsolutePath, command);
         String possibleError = repositoryAbsolutePath + " - " + ERROR_BY_LS_REMOTE + " " + addressURI;
-        return getRepositoryStatusFromProcessLogs(processLogs, possibleError);
+        return getRepositoryStatusFromProcessLogs(repositoryAbsolutePath, processLogs, possibleError);
     }
 
     private static RepositoryStatus getRepositoryStatusByHashAvailability(String repositoryAbsolutePath,
@@ -54,13 +62,15 @@ public class RepositoryApi {
         List<String> command = List.of("git", "show", "-s", hash);
         List<String> processLogs = ProcessExecutor.executeCommandAndReturnProcessLogs(repositoryAbsolutePath, command);
         String possibleError = repositoryAbsolutePath + " - " + ERROR_BY_HASH_AVAILABILITY + " " + hash;
-        return getRepositoryStatusFromProcessLogs(processLogs, possibleError);
+        return getRepositoryStatusFromProcessLogs(repositoryAbsolutePath, processLogs, possibleError);
     }
 
-    private static RepositoryStatus getRepositoryStatusFromProcessLogs(List<String> processLogs,
+    private static RepositoryStatus getRepositoryStatusFromProcessLogs(String repositoryAbsolutePath,
+                                                                       List<String> processLogs,
                                                                        String possibleError) {
         boolean isErrorInProcessLogs = isErrorInProcessLogs(processLogs);
         if (isErrorInProcessLogs) {
+            System.err.println("FAILURE IN " + repositoryAbsolutePath + " REPOSITORY PROCESSING: " + possibleError);
             return getUnavailableRepositoryStatus(possibleError);
         }
         return getAvailableRepositoryStatus();

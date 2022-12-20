@@ -32,6 +32,7 @@
         <java.version>17</java.version>
         <javaparser.symbol.solver.core.version>3.16.1</javaparser.symbol.solver.core.version>
         <commons.csv.version>1.7</commons.csv.version>
+        <commons.io.version>2.11.0</commons.io.version>
         <guava.version>30.1-jre</guava.version>
         <lombok.version>1.18.22</lombok.version>
         <vavr.version>0.9.0</vavr.version>
@@ -54,6 +55,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <version>${commons.csv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
