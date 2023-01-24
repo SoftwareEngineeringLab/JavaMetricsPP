@@ -3,8 +3,12 @@ package gitapi.callablecommitsapi.fileversionsapi;
 import domain.git.Repository;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
+import org.apache.commons.io.FileUtils;
 import utils.ProcessExecutor;
 
+import java.io.File;
+import java.net.URL;
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -40,10 +44,15 @@ public class FileVersionsApi {
         fileVersions.forEach(fileVersion -> downloadFileVersionToDirectory(directoryAbsolutePath, fileVersion));
     }
 
+    @SneakyThrows
     private static void downloadFileVersionToDirectory(String directoryAbsolutePath,
                                                        FileVersion fileVersion) {
-        List<String> command = List.of("wget", "-O", fileVersion.getFileName(), fileVersion.getFileURI());
-        ProcessExecutor.executeCommandAndReturnProcessLogs(directoryAbsolutePath, command);
+        File path = new File(directoryAbsolutePath);
+        if(!path.getParentFile().exists()) {
+            path.mkdirs();
+        }
+
+        FileUtils.copyURLToFile(new URL(fileVersion.getFileURI()), new File(directoryAbsolutePath + "/" + fileVersion.getFileName()));
     }
 
 }

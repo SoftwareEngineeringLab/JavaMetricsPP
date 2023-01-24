@@ -21,7 +21,7 @@ public class CallableRowsWriter {
             printer = getPrinter(out);
             List<CodeSample> callables = getCallables(codeSamples);
             callables.forEach(CallableRowsWriter::printCallable);
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }

@@ -35,7 +35,15 @@ public class CodeSamplesProvider {
     private static List<CodeSample> getAllCodeSamples(List<CSVInputRow> rows,
                                                       List<Repository> repositories) {
         return rows.stream()
-                .map(row -> getCodeSample(row, repositories))
+                .map(row -> {
+                    try {
+                        return getCodeSample(row, repositories);
+                    } catch (Exception ex) {
+                        System.err.println("Failed to fetch repository for " + row.getSampleId() + ". Exception: " + ex);
+                        return null;
+                    }
+                })
+                .filter(x -> x != null)
                 .toList();
     }
 

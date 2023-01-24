@@ -21,11 +21,18 @@ public class RepositoriesProvider {
 
         for (CSVInputRow row : distinctRows) {
             Repository repository = RepositoryMapper.from(row);
-            repositories.add(repository);
+            if(repository.isAvailable()) {
+                repositories.add(repository);
+            } else {
+                System.out.println("Repository unavailable. Dropping " + repository.getAbsolutePath());
+            }
             doneElements++;
             System.out.println(repository);
             System.out.println("Done repositories : " + doneElements + "/" + allElements);
         }
+
+        System.out.println("Finally got " + repositories.size() + " repositories to analyze");
+
         return repositories;
     }
 

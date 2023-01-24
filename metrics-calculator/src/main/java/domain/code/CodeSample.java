@@ -78,7 +78,7 @@ public abstract class CodeSample {
                 .filter(metric -> metric.hasTheSameName(metricName))
                 .findAny()
                 .map(metric -> metric.getValue().toString())
-                .orElseThrow();
+                .orElse("N/A");
     }
 
 }
