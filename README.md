@@ -1,7 +1,7 @@
-# MSc20PrzemyslawJambor
+# JavaMetricsPP aka JavaMetrics 2
 
 Author: Przemysław Jambor
 
-Supervisor: dr hab. inż. Lech Madeyski, prof. uczelni
+Supervisor and project lead: [Lech Madeyski](https://madeyski.e-informatyka.pl/)
 
-JavaMetricsPP: software measurement tool that is able to gather both, software product and process
+A software measurement tool that can gather both software product and process metrics.
